@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  php:
+    image: fpm:8.0
+    user: root
+    volumes:
+      - ./:/var/www/html
+  nginx:
+    image: nginx
+    user: root
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 80:80
+
